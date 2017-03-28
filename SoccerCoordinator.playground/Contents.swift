@@ -1,4 +1,4 @@
-// Individual Players Dictionaries
+// Individual Player's Dictionaries
 
 let joeSmith: [String: Any] =
 [
@@ -115,7 +115,7 @@ let chloeAlaska: [String: Any] =
 let arnoldWillis: [String: Any] =
 [
     "Name": "Arnold Willis",
-    "height": 43,
+    "Height": 43,
     "Experience": false,
     "Guardians": "Claire Willis"
 ]
@@ -146,13 +146,54 @@ let herschelKrustofski: [String: Any] =
 
 // Creating full player array
 
-let allPlayers = [joeSmith, jillTanner, billBon, evaGordon, mattGill, kimmyStein, sammyAdams, karlSaygan, suzaneGreenberg, salDali, joeKavalier, benFinkelstein, diegoSoto, chloeAlaska, arnoldWillis, phillipHelm, lesClay, herschelKrustofski]
+let players = [joeSmith, jillTanner, billBon, evaGordon, mattGill, kimmyStein, sammyAdams, karlSaygan, suzaneGreenberg, salDali, joeKavalier, benFinkelstein, diegoSoto, chloeAlaska, arnoldWillis, phillipHelm, lesClay, herschelKrustofski]
 
-// Separating experienced players and non-experienced into separate arrays using loops
+// Separating experienced players and new players into separate arrays using loops
+
 var experiencedPlayers = [Dictionary<String, Any>]()
-for player in allPlayers {
+var newPlayers = [Dictionary<String, Any>]()
+for player in players {
     let experience = player["Experience"] as! Bool
     if experience == true {
         experiencedPlayers.append(player)
     }
+    else {
+        newPlayers.append(player)
+    }
 }
+
+// Calculate average height of both experienced and new players
+
+var totalHeight: Int = 0
+for player in experiencedPlayers {
+    let height = player["Height"] as! Int
+    totalHeight += height
+}
+let experiencedAverageHeight = totalHeight / experiencedPlayers.count
+print("The average height of experienced players is \(experiencedAverageHeight)")
+
+var newTotalHeight = 0
+for newPlayer in newPlayers {
+    let height = newPlayer["Height"] as! Int
+    newTotalHeight += height
+}
+let newAverageHeight = newTotalHeight / newPlayers.count
+print("The average Hiehgt of new players is \(newAverageHeight)")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
