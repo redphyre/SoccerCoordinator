@@ -187,7 +187,7 @@ var teamRaptors: [Dictionary<String, Any>] = []
 
 //Assign players to teams using loops that factor in height and experience,
 //this code will also add a key,value pair to the player's dictionary collection 
-//to set their team name
+//to set their team name and practice schedule for future use
 
 var counter = 0
 for (var player) in experiencedPlayers {
@@ -196,14 +196,17 @@ for (var player) in experiencedPlayers {
         for team in 1...3 {
             switch team {
             case 1:
-                teamSharks.append(player)
                 player["Team"] = "Sharks"
+                player["Practice"] = "March 17th, 3pm"
+                teamSharks.append(player)
             case 2:
-                teamDragons.append(player)
                 player["Team"] = "Dragons"
+                player["Practice"] = "March 17th, 1pm"
+                teamDragons.append(player)
             case 3:
-                teamRaptors.append(player)
                 player["Team"] = "Raptors"
+                player["Practice"] = "March 18th, 1pm"
+                teamRaptors.append(player)
             default: break
             }
         }
@@ -217,14 +220,17 @@ for (var player) in newPlayers {
         for team in 1...3 {
             switch team {
             case 1:
-                teamSharks.append(player)
                 player["Team"] = "Sharks"
+                player["Practice"] = "March 17th, 3pm"
+                teamSharks.append(player)
             case 2:
-                teamDragons.append(player)
                 player["Team"] = "Dragons"
+                player["Practice"] = "March 17th, 1pm"
+                teamDragons.append(player)
             case 3:
-                teamRaptors.append(player)
                 player["Team"] = "Raptors"
+                player["Practice"] = "March 18th, 1pm"
+                teamRaptors.append(player)
             default: break
             }
         }
@@ -261,11 +267,15 @@ print("The raptors team average height is \(raptorsAverageHeight)")
 
 func printLetter(player: Dictionary<String, Any>) -> String {
     return "Dear \(player["Guardians"] as! String), "
-            //"Your child has been placed with Team \(player["Team"] as! String)" +
+            "Your child has been placed with Team \(player["Team"] as! String). " +
+            "Your"
 }
 
-printLetter(player: joeSmith)
+var letters: [Dictionary<String, Any>] = []
 
+for player in teamSharks {
+    
+}
 
 
 
