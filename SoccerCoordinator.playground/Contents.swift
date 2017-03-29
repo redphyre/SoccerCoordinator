@@ -1,6 +1,6 @@
 // Individual Player's Dictionaries
 
-let joeSmith: [String: Any] =
+var joeSmith: [String: Any] =
 [
     "Name": "Joe Smith",
     "Height": 42,
@@ -8,7 +8,7 @@ let joeSmith: [String: Any] =
     "Guardians": "Jim and Jan Smith"
 ]
 
-let jillTanner: [String: Any] =
+var jillTanner: [String: Any] =
 [
     "Name": "Jill Tanner",
     "Height": 36,
@@ -16,7 +16,7 @@ let jillTanner: [String: Any] =
     "Guardians": "Clara Tanner"
 ]
 
-let billBon: [String: Any] =
+var billBon: [String: Any] =
 [
     "Name": "Bill Bon",
     "Height": 43,
@@ -24,7 +24,7 @@ let billBon: [String: Any] =
     "Guardians": "Sara and Jenny Bon"
 ]
 
-let evaGordon: [String: Any] =
+var evaGordon: [String: Any] =
 [
     "Name": "Eva Gordon",
     "Height": 45,
@@ -32,7 +32,7 @@ let evaGordon: [String: Any] =
     "Guardians": "Wendy and Mike Gordon"
 ]
 
-let mattGill: [String: Any] =
+var mattGill: [String: Any] =
 [
     "Name": "Matt Gill",
     "Height": 40,
@@ -40,7 +40,7 @@ let mattGill: [String: Any] =
     "Guardians": "Charles and Sylvia Gill"
 ]
 
-let kimmyStein: [String: Any] =
+var kimmyStein: [String: Any] =
 [
     "Name": "Kimmy Stein",
     "Height": 41,
@@ -48,7 +48,7 @@ let kimmyStein: [String: Any] =
     "Guardians": "Bill and Hillary Stein"
 ]
 
-let sammyAdams: [String: Any] =
+var sammyAdams: [String: Any] =
 [
     "Name": "Sammy Adams",
     "Height": 45,
@@ -56,7 +56,7 @@ let sammyAdams: [String: Any] =
     "Guardians": "Jeff Adams"
 ]
 
-let karlSaygan: [String: Any] =
+var karlSaygan: [String: Any] =
 [
     "Name": "Karl Saygan",
     "Height": 42,
@@ -64,7 +64,7 @@ let karlSaygan: [String: Any] =
     "Guardians": "Heather Bledsoe"
 ]
 
-let suzaneGreenberg: [String: Any] =
+var suzaneGreenberg: [String: Any] =
 [
     "Name": "Suzane Greenberg",
     "Height": 44,
@@ -72,7 +72,7 @@ let suzaneGreenberg: [String: Any] =
     "Guardians": "Henrietta Dumas"
 ]
 
-let salDali: [String: Any] =
+var salDali: [String: Any] =
 [
     "Name": "Sal Dali",
     "Height": 41,
@@ -80,15 +80,14 @@ let salDali: [String: Any] =
     "Guardians": "Gala Dali"
 ]
 
-let joeKavalier: [String: Any] =
-[
-    "Name": "Joe Kavalier",
+var joeKavalier: [String: Any] =
+[    "Name": "Joe Kavalier",
     "Height": 39,
     "Experience": false,
     "Guardians": "Sam and Elaine Kavalier"
 ]
 
-let benFinkelstein: [String: Any] =
+var benFinkelstein: [String: Any] =
 [
     "Name": "Ben Finkelstein",
     "Height": 44,
@@ -96,7 +95,7 @@ let benFinkelstein: [String: Any] =
     "Guardians": "Aaron and Jill Finkelstein"
 ]
 
-let diegoSoto: [String: Any] =
+var diegoSoto: [String: Any] =
 [
     "Name": "Diego Soto",
     "Height": 41,
@@ -104,7 +103,7 @@ let diegoSoto: [String: Any] =
     "Guardians": "Robin and Sarika Soto"
 ]
 
-let chloeAlaska: [String: Any] =
+var chloeAlaska: [String: Any] =
 [
     "Name": "Chloe Alaska",
     "Height": 47,
@@ -112,7 +111,7 @@ let chloeAlaska: [String: Any] =
     "Guardians": "David and Jamie Alaska"
 ]
 
-let arnoldWillis: [String: Any] =
+var arnoldWillis: [String: Any] =
 [
     "Name": "Arnold Willis",
     "Height": 43,
@@ -120,7 +119,7 @@ let arnoldWillis: [String: Any] =
     "Guardians": "Claire Willis"
 ]
 
-let phillipHelm: [String: Any] =
+var phillipHelm: [String: Any] =
 [
     "Name": "Phillip Helm",
     "Height": 44,
@@ -128,7 +127,7 @@ let phillipHelm: [String: Any] =
     "Guardians": "Thomas Helm and Eva Jones"
 ]
 
-let lesClay: [String: Any] =
+var lesClay: [String: Any] =
 [
     "Name": "Les Clay",
     "Height": 42,
@@ -136,7 +135,7 @@ let lesClay: [String: Any] =
     "Guardians": "Wynonna Brown"
 ]
 
-let herschelKrustofski: [String: Any] =
+var herschelKrustofski: [String: Any] =
 [
     "Name": "Herschel Krustofski",
     "Height": 45,
@@ -186,7 +185,13 @@ var teamSharks: [Dictionary<String, Any>] = []
 var teamDragons: [Dictionary<String, Any>] = []
 var teamRaptors: [Dictionary<String, Any>] = []
 
-// Assign players to teams using loops that factor in height and experience
+// Assign players to teams using loops that factor in height and experience, this code will also add a key,value pair to the player's dictionary collection to set their team name
+
+func assignTeamToDictionary(player: Dictionary<String, Any>, team: String) -> Dictionary<String, Any> {
+    var playerDict = player
+    playerDict["Team"] = team
+    return playerDict
+}
 
 var counter = 0
 for player in experiencedPlayers {
@@ -194,9 +199,15 @@ for player in experiencedPlayers {
     if counter % 3 == 0 {
         for team in 1...3 {
             switch team {
-            case 1: teamSharks.append(player)
-            case 2: teamDragons.append(player)
-            case 3: teamRaptors.append(player)
+            case 1:
+                teamSharks.append(player)
+                assignTeamToDictionary(player: player, team: "Sharks")
+            case 2:
+                teamDragons.append(player)
+                assignTeamToDictionary(player: player, team: "Dragons")
+            case 3:
+                teamRaptors.append(player)
+                assignTeamToDictionary(player: player, team: "Raptors")
             default: break
             }
         }
@@ -209,9 +220,15 @@ for player in newPlayers {
     if counter % 3 == 0 {
         for team in 1...3 {
             switch team {
-            case 1: teamSharks.append(player)
-            case 2: teamDragons.append(player)
-            case 3: teamRaptors.append(player)
+            case 1:
+                teamSharks.append(player)
+                assignTeamToDictionary(player: player, team: "Sharks")
+            case 2:
+                teamDragons.append(player)
+                assignTeamToDictionary(player: player, team: "Dragons")
+            case 3:
+                teamRaptors.append(player)
+                assignTeamToDictionary(player: player, team: "Raptors")
             default: break
             }
         }
@@ -247,7 +264,8 @@ print("The raptors team average height is \(raptorsAverageHeight)")
 // Printing of letter to guardians
 
 func printLetter(player: Dictionary<String, Any>) -> String {
-    return "Dear \(player["Guardians"] as! String),"
+    return "Dear \(player["Guardians"] as! String), " +
+            "Test"
 }
 
 printLetter(player: joeSmith)
