@@ -218,8 +218,39 @@ for player in newPlayers {
     }
 }
 
+// Calculate team average heights
 
+var sharksTotalHeight = 0
+for player in teamSharks {
+    let height = player["Height"] as! Int
+    sharksTotalHeight += height
+}
+let sharksAverageHeight = sharksTotalHeight / teamSharks.count
+print("The sharks team average height is \(sharksAverageHeight)")
 
+var dragonsTotalHeight = 0
+for player in teamDragons {
+    let height = player["Height"] as! Int
+    dragonsTotalHeight += height
+}
+let dragonsAverageHeight = dragonsTotalHeight / teamDragons.count
+print("The dragons team average height is \(dragonsAverageHeight)")
+
+var raptorsTotalHeight = 0
+for player in teamRaptors {
+    let height = player["Height"] as! Int
+    raptorsTotalHeight += height
+}
+let raptorsAverageHeight = raptorsTotalHeight / teamRaptors.count
+print("The raptors team average height is \(raptorsAverageHeight)")
+
+// Printing of letter to guardians
+
+func printLetter(player: Dictionary<String, Any>) -> String {
+    return "Dear \(player["Guardians"] as! String),"
+}
+
+printLetter(player: joeSmith)
 
 
 
