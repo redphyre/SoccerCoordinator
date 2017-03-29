@@ -178,7 +178,46 @@ for newPlayer in newPlayers {
     newTotalHeight += height
 }
 let newAverageHeight = newTotalHeight / newPlayers.count
-print("The average Hiehgt of new players is \(newAverageHeight)")
+print("The average height of new players is \(newAverageHeight)")
+
+// Establish team arrays
+
+var teamSharks: [Dictionary<String, Any>] = []
+var teamDragons: [Dictionary<String, Any>] = []
+var teamRaptors: [Dictionary<String, Any>] = []
+
+// Assign players to teams using loops that factor in height and experience
+
+var counter = 0
+for player in experiencedPlayers {
+    counter += 1
+    if counter % 3 == 0 {
+        for team in 1...3 {
+            switch team {
+            case 1: teamSharks.append(player)
+            case 2: teamDragons.append(player)
+            case 3: teamRaptors.append(player)
+            default: break
+            }
+        }
+    }
+}
+
+counter = 0
+for player in newPlayers {
+    counter += 1
+    if counter % 3 == 0 {
+        for team in 1...3 {
+            switch team {
+            case 1: teamSharks.append(player)
+            case 2: teamDragons.append(player)
+            case 3: teamRaptors.append(player)
+            default: break
+            }
+        }
+    }
+}
+
 
 
 
