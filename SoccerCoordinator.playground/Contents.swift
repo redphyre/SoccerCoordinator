@@ -267,7 +267,7 @@ print("The raptors team average height is \(raptorsAverageHeight)")
 
 func printLetter(player: Dictionary<String, Any>) -> String {
     return "Dear \(player["Guardians"] as! String), " +
-            "Your child has been placed with Team \(player["Team"] as! String). " +
+            "Your child, \(player["Name"] as! String), has been placed with Team \(player["Team"] as! String). " +
             "The first practice is set to begin on \(player["Practice"] as! String). " +
             "Welcome to the team and let's have fun together!"
 }
