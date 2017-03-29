@@ -286,7 +286,9 @@ for player in teamRaptors {
     letters.append(printLetter(player: player))
 }
 
-print(letters)
+for letter in letters {
+    print(letter)
+}
 
 
 
