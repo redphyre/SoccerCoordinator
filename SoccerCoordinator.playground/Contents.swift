@@ -185,11 +185,9 @@ var teamSharks: [Dictionary<String, Any>] = []
 var teamDragons: [Dictionary<String, Any>] = []
 var teamRaptors: [Dictionary<String, Any>] = []
 
-/* 
-Assign players to teams using loops that factor in height and experience,
-this code will also add a key,value pair to the player's dictionary collection 
-to set their team name
-*/
+//Assign players to teams using loops that factor in height and experience,
+//this code will also add a key,value pair to the player's dictionary collection 
+//to set their team name
 
 func assignTeamToDictionary(player: Dictionary<String, Any>, team: String) -> Dictionary<String, Any> {
     var playerDict = player
