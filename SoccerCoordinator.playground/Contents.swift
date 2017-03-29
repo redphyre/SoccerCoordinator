@@ -266,18 +266,27 @@ print("The raptors team average height is \(raptorsAverageHeight)")
 // Printing of letters to guardians
 
 func printLetter(player: Dictionary<String, Any>) -> String {
-    return "Dear \(player["Guardians"] as! String), "
+    return "Dear \(player["Guardians"] as! String), " +
             "Your child has been placed with Team \(player["Team"] as! String). " +
-            "Your"
+            "The first practice is set to begin on \(player["Practice"] as! String). " +
+            "Welcome to the team and let's have fun together!"
 }
 
-var letters: [Dictionary<String, Any>] = []
+var letters: [String] = []
 
 for player in teamSharks {
-    
+    letters.append(printLetter(player: player))
 }
 
+for player in teamDragons {
+    letters.append(printLetter(player: player))
+}
 
+for player in teamRaptors {
+    letters.append(printLetter(player: player))
+}
+
+print(letters)
 
 
 
