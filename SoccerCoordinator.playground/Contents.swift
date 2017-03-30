@@ -190,50 +190,45 @@ var teamRaptors: [Dictionary<String, Any>] = []
 //to set their team name and practice schedule for future use
 
 var counter = 0
+var team = 1
 for (var player) in experiencedPlayers {
     counter += 1
-    if counter % 3 == 0 {
-        for team in 1...3 {
-            switch team {
-            case 1:
-                player["Team"] = "Sharks"
-                player["Practice"] = "March 17th, 3pm"
-                teamSharks.append(player)
-            case 2:
-                player["Team"] = "Dragons"
-                player["Practice"] = "March 17th, 1pm"
-                teamDragons.append(player)
-            case 3:
-                player["Team"] = "Raptors"
-                player["Practice"] = "March 18th, 1pm"
-                teamRaptors.append(player)
-            default: break
-            }
-        }
+    var remainder = counter % 3
+    switch remainder {
+    case 1:
+        player["Team"] = "Sharks"
+        player["Practice"] = "March 17thm 3pm"
+        teamSharks.append(player)
+    case 2:
+        player["Team"] = "Dragons"
+        player["Practice"] = "March 17th, 1pm"
+        teamDragons.append(player)
+    case 0:
+        player["Team"] = "Raptors"
+        player["Practice"] = "March 18thm 1pm"
+        teamRaptors.append(player)
+    default: break
     }
 }
 
 counter = 0
 for (var player) in newPlayers {
     counter += 1
-    if counter % 3 == 0 {
-        for team in 1...3 {
-            switch team {
-            case 1:
-                player["Team"] = "Sharks"
-                player["Practice"] = "March 17th, 3pm"
-                teamSharks.append(player)
-            case 2:
-                player["Team"] = "Dragons"
-                player["Practice"] = "March 17th, 1pm"
-                teamDragons.append(player)
-            case 3:
-                player["Team"] = "Raptors"
-                player["Practice"] = "March 18th, 1pm"
-                teamRaptors.append(player)
-            default: break
-            }
-        }
+    var remainder = counter % 3
+    switch remainder {
+    case 1:
+        player["Team"] = "Sharks"
+        player["Practice"] = "March 17thm 3pm"
+        teamSharks.append(player)
+    case 2:
+        player["Team"] = "Dragons"
+        player["Practice"] = "March 17th, 1pm"
+        teamDragons.append(player)
+    case 0:
+        player["Team"] = "Raptors"
+        player["Practice"] = "March 18thm 1pm"
+        teamRaptors.append(player)
+    default: break
     }
 }
 
@@ -289,10 +284,4 @@ for player in teamRaptors {
 for letter in letters {
     print(letter)
 }
-
-
-
-
-
-
 
