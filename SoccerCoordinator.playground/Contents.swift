@@ -197,7 +197,7 @@ for (var player) in experiencedPlayers {
     switch remainder {
     case 1:
         player["Team"] = "Sharks"
-        player["Practice"] = "March 17thm 3pm"
+        player["Practice"] = "March 17th, 3pm"
         teamSharks.append(player)
     case 2:
         player["Team"] = "Dragons"
@@ -205,7 +205,7 @@ for (var player) in experiencedPlayers {
         teamDragons.append(player)
     case 0:
         player["Team"] = "Raptors"
-        player["Practice"] = "March 18thm 1pm"
+        player["Practice"] = "March 18thm, 1pm"
         teamRaptors.append(player)
     default: break
     }
@@ -218,7 +218,7 @@ for (var player) in newPlayers {
     switch remainder {
     case 1:
         player["Team"] = "Sharks"
-        player["Practice"] = "March 17thm 3pm"
+        player["Practice"] = "March 17th, 3pm"
         teamSharks.append(player)
     case 2:
         player["Team"] = "Dragons"
@@ -226,7 +226,7 @@ for (var player) in newPlayers {
         teamDragons.append(player)
     case 0:
         player["Team"] = "Raptors"
-        player["Practice"] = "March 18thm 1pm"
+        player["Practice"] = "March 18thm, 1pm"
         teamRaptors.append(player)
     default: break
     }
