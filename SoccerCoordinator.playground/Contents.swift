@@ -190,7 +190,6 @@ var teamRaptors: [Dictionary<String, Any>] = []
 //to set their team name and practice schedule for future use
 
 var counter = 0
-var team = 1
 for (var player) in experiencedPlayers {
     counter += 1
     var remainder = counter % 3
@@ -205,29 +204,29 @@ for (var player) in experiencedPlayers {
         teamDragons.append(player)
     case 0:
         player["Team"] = "Raptors"
-        player["Practice"] = "March 18thm, 1pm"
+        player["Practice"] = "March 18th, 1pm"
         teamRaptors.append(player)
     default: break
     }
 }
 
 counter = 0
-for (var player) in newPlayers {
+for (var newPlayer) in newPlayers {
     counter += 1
     var remainder = counter % 3
     switch remainder {
     case 1:
-        player["Team"] = "Sharks"
-        player["Practice"] = "March 17th, 3pm"
-        teamSharks.append(player)
+        newPlayer["Team"] = "Sharks"
+        newPlayer["Practice"] = "March 17th, 3pm"
+        teamSharks.append(newPlayer)
     case 2:
-        player["Team"] = "Dragons"
-        player["Practice"] = "March 17th, 1pm"
-        teamDragons.append(player)
+        newPlayer["Team"] = "Dragons"
+        newPlayer["Practice"] = "March 17th, 1pm"
+        teamDragons.append(newPlayer)
     case 0:
-        player["Team"] = "Raptors"
-        player["Practice"] = "March 18thm, 1pm"
-        teamRaptors.append(player)
+        newPlayer["Team"] = "Raptors"
+        newPlayer["Practice"] = "March 18th, 1pm"
+        teamRaptors.append(newPlayer)
     default: break
     }
 }
