@@ -285,3 +285,8 @@ for letter in letters {
     print(letter)
 }
 
+print(teamDragons)
+
+print(teamSharks)
+
+print(teamRaptors)
